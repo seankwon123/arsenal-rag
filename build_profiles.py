@@ -251,7 +251,7 @@ def main():
     # ---- Tiny retrieval demo (no LLM, just nearest cards)
     retriever = vs.as_retriever(search_kwargs={"k": 4})
     for q in [
-        "Who led Arsenal in progressive passes last season?",
+        "Who led Arsenal in progressive passes in 24-25 season?",
         "Compare Saka vs Martinelli on xG and GA/90 across 23-24 and 24-25",
     ]:
         hits = retriever.get_relevant_documents(q)
