@@ -6,8 +6,8 @@ import pandas as pd
 from unidecode import unidecode
 
 # --------- CONFIG ---------
-CSV_2324 = "arsenal_2023_24_fbref_standard.csv"  # REQUIRED (your 23-24 standard table export)
-CSV_2425 = "arsenal_2024_25_fbref_standard.csv"  # OPTIONAL (same table for 24-25 if you have it)
+CSV_2324 = "arsenal_2023_24_fbref_standard.csv"  # REQUIRED
+CSV_2425 = "arsenal_2024_25_fbref_standard.csv"  # OPTIONAL
 
 TEAM = "Arsenal"
 SEASON_2324 = "2023-24"
@@ -20,7 +20,7 @@ FAISS_DIR = "faiss_index"
 # --------------------------
 
 
-# ---- Column mapping from your header to short snake_case we’ll use internally
+# ---- Column mapping
 COLMAP = {
     "Player": "player",
     "Nation": "nation",
@@ -52,7 +52,6 @@ COLMAP = {
     "Per 90 Minutes_npxG": "npxg90",
     "Per 90 Minutes_npxG+xAG": "npxg_xag90",
     "Matches": "matches",
-    # from your helper columns in scrape we kept:
     "team": "team",
     "season": "season",
 }
@@ -184,7 +183,7 @@ def profile_for_player(rows: pd.DataFrame) -> Dict:
         "pos": pos,
         "nation": nation,
         "age": age,
-        "seasons": seasons,   # 1 or 2 entries
+        "seasons": seasons,   # 1 or 2
     }
 
 def make_card(profile: Dict) -> str:
